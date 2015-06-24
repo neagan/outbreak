@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports(grunt) {
+module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-webpack');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -13,14 +13,14 @@ module.exports(grunt) {
 
     webpack: {
       dev: {
-        entry: __dirname + 'app/js/client.js',
+        entry: __dirname + '/app/js/main.js',
         output: {
           path: 'build/',
           file: 'bundle.js'
         }
       },
       prod: {
-        entry: __dirname + 'app/js/client.js',
+        entry: __dirname + '/app/js/main.js',
         output: {
           path: 'dist/',
           file: 'bundle.js'
