@@ -1,5 +1,6 @@
 'use strict';
 
-function GameManager() {
+function GameManager(InputManager) {
+  this.inputManager = new InputManager;
 
 }
