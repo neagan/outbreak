@@ -13,14 +13,14 @@ module.exports = function(grunt) {
 
     webpack: {
       dev: {
-        entry: __dirname + '/app/js/game_client.js',
+        entry: __dirname + '/app/js/main.js',
         output: {
           path: 'build/',
           file: 'bundle.js'
         }
       },
       prod: {
-        entry: __dirname + '/app/js/game_client.js',
+        entry: __dirname + '/app/js/main.js',
         output: {
           path: 'dist/',
           file: 'bundle.js'

@@ -1,6 +1,5 @@
 'use strict';
 
-function GameManager(InputManager) {
+module.exports = function GameManager(InputManager) {
   this.inputManager = new InputManager;
-
-}
+};

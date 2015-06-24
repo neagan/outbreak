@@ -1,16 +1,20 @@
 'use strict';
 
-;(function() {
-  var x = 0;
-  function main() {
-    //new GameManager(InputManager); // main loop contents here
+module.exports = App;
 
-    document.getElementById('log').innerHTML = x.toString();
-    x++;
-    if (x < 60) {
-      window.requestAnimationFrame(main);
+function App() {
+  this.x = 0;
+};
+
+App.prototype.run = function() {
+  var _this = this;
+
+  requestAnimationFrame(function() {
+    document.getElementById('log').innerHTML = _this.x;
+    _this.x++;
+
+    if (_this.x <= 100) {
+      _this.run();
     }
-  }
-
-  main();
-})();
+  });
+};

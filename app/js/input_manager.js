@@ -1,5 +1,5 @@
 'use strict';
 
-function InputManager() {
+module.exports = function InputManager() {
   // manage keystrokes
 }
