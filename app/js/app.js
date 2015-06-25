@@ -4,14 +4,14 @@ var Layout = require('./layout');
 
 module.exports = App;
 
-function App() {
-  this.x = 1;
-  this.canvas = document.getElementById('canvas');
-  this.ctx = this.canvas.getContext('2d');
+// Game app constructor
+function App(dim) {
+
 };
 
 App.prototype.init = function() {
-
+  var grid = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 4, row: 3}, 10);
+  grid.create();
 };
 
 App.prototype.run = function() {
@@ -19,18 +19,6 @@ App.prototype.run = function() {
 
   requestAnimationFrame(function() {
 
-    if (_this.x % 2 === 0) {
-      _this.ctx.fillStyle = 'green';
-    } else {
-      _this.ctx.fillStyle = 'blue';
-    }
 
-    _this.ctx.fillRect(10, 10, _this.x, 100);
-
-    if (_this.x <= 100) {
-      console.log(_this.x);
-      _this.x++;
-      _this.run();
-    }
   });
 };
