@@ -1,6 +1,12 @@
 'use strict';
 
-module.exports = function Block(position, level) {
+module.exports = Block;
+
+function Block(size, position, level) {
+  this.width = size.width;
+  this.height = size.height;
+
+  // add width || height + 10(?) for position
   this.x = position.x;
   this.y = position.y;
 

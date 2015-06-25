@@ -1,11 +1,17 @@
 'use strict';
 
+var Layout = require('./layout');
+
 module.exports = App;
 
 function App() {
   this.x = 1;
   this.canvas = document.getElementById('canvas');
   this.ctx = this.canvas.getContext('2d');
+};
+
+App.prototype.init = function() {
+
 };
 
 App.prototype.run = function() {
