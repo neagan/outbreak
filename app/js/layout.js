@@ -36,9 +36,9 @@ Layout.prototype.create = function() {
   console.log(this.columns.length);
   console.log(this.rows.length);
 
-  for (var i = 0; i < _this.columns.length; i++) {
+  for (var i = 0; i < _this.rows.length; i++) {
 
-    for (var j = 0; j < _this.rows.length; j++) {
+    for (var j = 0; j < _this.columns.length; j++) {
 
       var block = new Block(_this.size, {x: x, y: y});
       block.render();

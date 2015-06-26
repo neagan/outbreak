@@ -10,7 +10,7 @@ function App(dim) {
 };
 
 App.prototype.init = function() {
-  var grid = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 4, row: 3}, 10);
+  var grid = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 5, row: 3}, 10);
   grid.create();
 };
 
