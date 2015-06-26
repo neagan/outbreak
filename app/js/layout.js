@@ -1,6 +1,7 @@
 'use strict';
 
 var Block = require('./block');
+var Ball = require('./ball');
 
 module.exports = Layout;
 
@@ -31,10 +32,6 @@ Layout.prototype.create = function() {
   // Adjustable positions
   var x = this.startX;
   var y = this.startY;
-  console.log(x);
-  console.log(y);
-  console.log(this.columns.length);
-  console.log(this.rows.length);
 
   for (var i = 0; i < _this.rows.length; i++) {
 
@@ -49,4 +46,6 @@ Layout.prototype.create = function() {
     y += (_this.height + _this.offset);
   }
 
+  var ball = new Ball(10);
+  ball.render();
 };
