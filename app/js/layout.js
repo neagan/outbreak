@@ -2,6 +2,7 @@
 
 var Block = require('./block');
 var Ball = require('./ball');
+var Paddle = require('./paddle');
 
 module.exports = Layout;
 
@@ -48,4 +49,7 @@ Layout.prototype.create = function() {
 
   var ball = new Ball(10);
   ball.render();
+
+  var paddle = new Paddle({x: 220, y: 513}, 100);
+  paddle.render();
 };
