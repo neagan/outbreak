@@ -50,6 +50,6 @@ Layout.prototype.create = function() {
   var ball = new Ball(10);
   ball.render();
 
-  var paddle = new Paddle({x: 220, y: 513}, 100);
-  paddle.render();
+  var paddle = new Paddle();
+  paddle.render({});
 };
