@@ -44,9 +44,28 @@ Ball.prototype.update = function() {
   this.y -= this.y_speed
 }
 
+// Primitive ball bounce
+// Glitch occurs when it directly impacts a corner
 Ball.prototype.bounce = function() {
+
+  // Upper right corner
+  if (this.x >= canvas.width - (this.rad + 1) && this.y <= this.rad + 1) {
+    this.x_speed = -this.x_speed;
+    this.y_speed = -this.y_speed;
+  // Upper left corner
+  } else if (this.x <= this.rad + 1 && this.y <= this.rad + 1) {
+    this.x_speed = -this.x_speed;
+    this.y_speed = -this.y_speed;
+  // Bottom left corner
+  } else if (this.x <= this.rad + 1 && this.y >= canvas.height - (this.rad + 1)) {
+    this.x_speed = -this.x_speed;
+    this.y_speed = -this.y_speed;
+  // Bottom right corner
+  } else if (this.x >= canvas.width - (this.rad + 1) && this.y >= canvas.height - (this.rad + 1)) {
+    this.x_speed = -this.x_speed;
+    this.y_speed = -this.y_speed;
   // Left wall
-  if (this.x <= this.rad + 1) {
+  } else if (this.x <= this.rad + 1) {
     this.x_speed = -this.x_speed;
   // Right wall
   } else if (this.x >= canvas.width - (this.rad + 1)) {
