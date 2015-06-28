@@ -30,24 +30,36 @@ Paddle.prototype.render = function() {
 };
 
 Paddle.prototype.moveLeft = function() {
-  this.x -= 3;
-  console.log('left');
+  this.x -= 10;
 }
 
 Paddle.prototype.moveRight = function() {
-  this.x += 3;
-  console.log('right');
+  this.x += 10;
+}
+
+Paddle.prototype.moveUp = function() {
+  this.y -= 10;
+}
+
+Paddle.prototype.moveDown = function() {
+  this.y += 10;
 }
 
 Paddle.prototype.update = function() {
   if (Key.isDown(Key.LEFT)) {
     this.moveLeft();
-    console.log('update left');
   }
 
   if (Key.isDown(Key.RIGHT)) {
     this.moveRight();
-    console.log('update right');
+  }
+
+  if (Key.isDown(Key.UP)) {
+    this.moveUp();
+  }
+
+  if (Key.isDown(Key.DOWN)) {
+    this.moveDown();
   }
 }
 

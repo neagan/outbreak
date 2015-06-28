@@ -13,7 +13,7 @@ function App(dim) {
 
 App.prototype.init = function() {
   var layout = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 7, row: 3}, 10);
-  layout.create();
+  // layout.create();
 
   this.player = new Paddle();
   this.player.render();
