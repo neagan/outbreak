@@ -5,7 +5,7 @@ var Key = require('./key');
 
 module.exports = Paddle;
 
-function Paddle(canvas) {
+function Paddle() {
   this.x = 329;
   this.y = 473;
 
@@ -29,7 +29,6 @@ Paddle.prototype.moveLeft = function() {
   if (this.x >= 10) {
     this.x -= 10;
   } else {
-    // Bring paddle to wall
     this.x = 0;
   }
 }
