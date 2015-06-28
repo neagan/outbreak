@@ -15,18 +15,15 @@ function App(dim) {
 App.prototype.init = function() {
   var layout = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 7, row: 3}, 10);
   // layout.create();
-  var canvas = document.getElementById('canvas');
-  console.log(canvas.width);
-  console.log(canvas.height);
-  console.log(canvas.getContext('2d'));
 
   // Paddle is the player in this case
-  this.player = new Paddle(canvas);
+  this.player = new Paddle();
   this.player.render();
 
   // Render ball in starting position
   this.ball = new Ball(10);
   this.ball.render();
+  this.ball.start();
 
   window.addEventListener('keyup', function(event) {
     Key.onKeyup(event);
@@ -40,13 +37,15 @@ App.prototype.init = function() {
 };
 
 App.prototype.update = function() {
-  // Render paddle
+  // Re render location of ball and player
   this.player.clear();
+  this.ball.clear();
+
   this.player.update();
   this.player.render();
 
-
-
+  this.ball.update();
+  this.ball.render();
 };
 
 App.prototype.run = function() {
