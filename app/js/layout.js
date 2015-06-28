@@ -34,6 +34,7 @@ Layout.prototype.create = function() {
   var x = this.startX;
   var y = this.startY;
 
+  // Render blocks
   for (var i = 0; i < _this.rows.length; i++) {
 
     for (var j = 0; j < _this.columns.length; j++) {
@@ -47,9 +48,8 @@ Layout.prototype.create = function() {
     y += (_this.height + _this.offset);
   }
 
+  // Render ball
   var ball = new Ball(10);
   ball.render();
 
-  var paddle = new Paddle();
-  paddle.render({});
 };
