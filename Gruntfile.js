@@ -36,6 +36,14 @@ module.exports = function(grunt) {
         src: '**/*.html',
         dest: 'build/',
         filter: 'isFile'
+      },
+      css: {
+        cwd: 'app/',
+        expand: true,
+        flatten: false,
+        src: '**/*.css',
+        dest: 'build/',
+        filter: 'isFile'
       }
     },
 
@@ -49,7 +57,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build:dev', ['webpack:dev', 'copy:html']);
+  grunt.registerTask('build:dev', ['webpack:dev', 'copy:html', 'copy:css']);
   grunt.registerTask('build:prod', ['webpack:prod', 'copy:html']);
   grunt.registerTask('dev', ['build:dev']);
   grunt.registerTask('prod', ['build:prod']);

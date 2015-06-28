@@ -9,8 +9,8 @@ function Paddle() {
   // this.width = width || 100;
   // this.color = color || 'blue';
   // this.pos = pos;
-  this.x = 220;
-  this.y = 513;
+  this.x = 329;
+  this.y = 473;
 
   // Save canvas state
   this.canvas = document.getElementById('canvas');

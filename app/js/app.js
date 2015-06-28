@@ -12,7 +12,7 @@ function App(dim) {
 };
 
 App.prototype.init = function() {
-  var layout = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 5, row: 3}, 10);
+  var layout = new Layout({x: 0, y: 0}, {width: 100, height: 25}, {col: 7, row: 3}, 10);
   layout.create();
 
   this.player = new Paddle();
@@ -30,9 +30,12 @@ App.prototype.init = function() {
 };
 
 App.prototype.update = function() {
+  // Render paddle
   this.player.clear();
   this.player.update();
   this.player.render();
+
+
 };
 
 App.prototype.run = function() {
