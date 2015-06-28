@@ -17,7 +17,7 @@ Ball.prototype.render = function() {
   // Create ball
   this.ctx.fillStyle = this.color;
   this.ctx.beginPath();
-  this.ctx.arc(380, 468, this.rad, 0, 2 * Math.PI);
+  this.ctx.arc(380, 461, this.rad, 0, 2 * Math.PI);
   this.ctx.stroke();
   this.ctx.fill();
 }

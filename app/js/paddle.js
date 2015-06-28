@@ -5,10 +5,7 @@ var Key = require('./key');
 
 module.exports = Paddle;
 
-function Paddle() {
-  // this.width = width || 100;
-  // this.color = color || 'blue';
-  // this.pos = pos;
+function Paddle(canvas) {
   this.x = 329;
   this.y = 473;
 
@@ -22,7 +19,6 @@ Paddle.prototype.render = function() {
   this.ctx.fillStyle = 'blue';
   this.ctx.fillRect(this.x, this.y, 100, 25);
 
-
   // Paddle outline
   this.ctx.strokeStyle = 'black';
   this.ctx.lineWidth = 1;
@@ -30,19 +26,36 @@ Paddle.prototype.render = function() {
 };
 
 Paddle.prototype.moveLeft = function() {
-  this.x -= 10;
+  if (this.x >= 10) {
+    this.x -= 10;
+  } else {
+    // Bring paddle to wall
+    this.x = 0;
+  }
 }
 
 Paddle.prototype.moveRight = function() {
-  this.x += 10;
+  if (this.x <= (canvas.width - 110)) {
+    this.x += 10;
+  } else {
+    this.x = (canvas.width - 100);
+  }
 }
 
 Paddle.prototype.moveUp = function() {
-  this.y -= 10;
+  if (this.y >= 10) {
+    this.y -= 10;
+  } else {
+    this.y = 0;
+  }
 }
 
 Paddle.prototype.moveDown = function() {
-  this.y += 10;
+  if (this.y <= (canvas.height - 35)) {
+    this.y += 10;
+  } else {
+    this.y = (canvas.height - 25);
+  }
 }
 
 Paddle.prototype.update = function() {
