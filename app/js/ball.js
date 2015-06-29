@@ -46,7 +46,8 @@ Ball.prototype.update = function(player) {
 // Glitch occurs when it directly impacts a corner
 Ball.prototype.collision = function(player) {
 
-  // TODO: Refactor this
+  // TODO: Refactor this and make it look reasonable
+
   // Collision with wall
 
   // Upper right corner
@@ -89,6 +90,16 @@ Ball.prototype.collision = function(player) {
   } else if (this.y - (this.rad + 1) <= player.y + 25 && this.y - (this.rad + 1) >= player.y
               && this.x >= player.x && this.x <= (player.x + 100)) {
     this.y_speed = -this.y_speed;
+  }
+
+  // Left side of paddle
+  if (this.x + (this.rad + 1) >= player.x && this.x + (this.rad + 1) <= player.x + 100
+      && this.y >= player.y && this.y <= (player.y + 25)) {
+    this.x_speed = -this.x_speed;
+  // Right side of paddle
+  } else if (this.x - (this.rad + 1) <= player.x + 100 && this.x - (this.rad + 1) >= player.x
+              && this.y >= player.y && this.y <= (player.y + 25)) {
+    this.x_speed = -this.x_speed;
   }
 
 }
