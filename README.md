@@ -1,9 +1,9 @@
 Outbreak
 ========
 
-Simple ball and paddle game
+###Simple ball and paddle game
 
-Play production demo at out-break.herokuapp.com
+#####Play production demo [here](http://out-break.herokuapp.com)
 
 Current features:
 * Wall collision detection
