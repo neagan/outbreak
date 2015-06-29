@@ -30,15 +30,13 @@ Ball.prototype.render = function() {
   this.ctx.fill();
 }
 
-Ball.prototype.update = function() {
+Ball.prototype.update = function(player) {
   // Update ball
   // if (this.state === 'start') {
   //   this.x += 1;
   //   this.y -= 1;
   // }
-  this.bounce();
-  console.log(this.x_speed);
-  // console.log(this.y_speed);
+  this.collision(player);
 
   this.x += this.x_speed;
   this.y -= this.y_speed
@@ -46,7 +44,10 @@ Ball.prototype.update = function() {
 
 // Primitive ball bounce
 // Glitch occurs when it directly impacts a corner
-Ball.prototype.bounce = function() {
+Ball.prototype.collision = function(player) {
+
+  // TODO: Refactor this
+  // Collision with wall
 
   // Upper right corner
   if (this.x >= canvas.width - (this.rad + 1) && this.y <= this.rad + 1) {
@@ -77,6 +78,19 @@ Ball.prototype.bounce = function() {
   } else if (this.y >= canvas.height - (this.rad + 1)) {
     this.y_speed = -this.y_speed;
   }
+
+  // Collision with paddle
+
+  // Top of paddle
+  if (this.y + (this.rad + 1) >= player.y && this.y + (this.rad + 1) <= player.y + 25
+      && this.x >= player.x && this.x <= (player.x + 100)) {
+    this.y_speed = -this.y_speed;
+  // Bottom of paddle
+  } else if (this.y - (this.rad + 1) <= player.y + 25 && this.y - (this.rad + 1) >= player.y
+              && this.x >= player.x && this.x <= (player.x + 100)) {
+    this.y_speed = -this.y_speed;
+  }
+
 }
 
 Ball.prototype.start = function() {

@@ -44,7 +44,7 @@ App.prototype.update = function() {
   this.player.update();
   this.player.render();
 
-  this.ball.update();
+  this.ball.update(this.player);
   this.ball.render();
 };
 
